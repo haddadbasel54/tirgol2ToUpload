@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="output.css" />
+</head>
+
+<body class="dark:text-white light:text-black flex justify-center items-center h-screen">
+    <!-- your app code goes here -->
+    <div class="calculatorBody max-w-lg rounded overflow-hidden shadow-2xl bg-gray-400 bg-opacity-90 bg-gradient-to-tr from-pink-500 flex"> 
+        <!-- here we build the padding for the calculator -->
+        <div class="px-16 py-25 justify-end " style="padding-top: 75px;">
+            <div id="monitor" class="px-8 py-6 mb-8 rounded bg-white"></div>
+            <!-- building the buttons -->
+            <div class="mb-4 flex justify-around space-x-8">
+                <div id="AC" class="btn rounded-full border-2 border-red-500 px-4 py-2 hover:bg-white">AC</div>
+                <div id="C" class="btn rounded-full border-2 border-red-500 px-4 py-2 hover:bg-white">C</div>
+                <div id="dot" class="btn rounded-full border-2 border-gray-600 px-4 py-2 hover:bg-white">.</div>
+                <div id="divide" class="btn rounded-full border-2 border-green-600 px-4 py-2 hover:bg-white">/</div>
+            </div>
+            <div class="mb-4 flex justify-around space-x-10">
+                <div id="seven" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">7</div>
+                <div id="eight" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">8</div>
+                <div id="nine" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">9</div>
+                <div id="multiply" class="btn rounded-full border-2 border-green-600 px-4 py-2 hover:bg-white">*</div>
+            </div>
+            <div class="mb-4 flex justify-around space-x-10">
+                <div id="four" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">4</div>
+                <div id="five" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">5</div>
+                <div id="six" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">6</div>
+                <div id="subtract" class="btn rounded-full border-2 border-green-600 px-4 py-2 hover:bg-white">-</div>
+            </div>
+            <div class="mb-4 flex justify-around space-x-10">
+                <div id="one" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">1</div>
+                <div id="two" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">2</div>
+                <div id="three" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">3</div>
+                <div id="add" class="btn rounded-full border-2 border-green-600 px-4 py-2 hover:bg-white">+</div>
+            </div>
+            <div class="mb-4 flex justify-evenly space-x-8">
+                <div id="zero" class="btn rounded-full border-2 border-yellow-300 px-6 py-2 hover:bg-white">0</div>
+                <div id="equals" class="btn rounded-full border-2 border-blue-600 px-12 py-2 hover:bg-white">=</div>
+            </div>
+    </div>
+    <script src="main.js"></script>
+    <!-- special scripts for integration in App Gallery - must be placed at the bottom of the HTML after your code -->
+    <script>
+        // custom config for the MTW app 
+        const mtwAppConfig = {
+            border: true // app border in the MTW page                    
+        }
+
+        ///////////////////////////////////////////////////////
+        // implement this functions in order to use private API        
+        const sendPrivateApiRequest = async () => {
+            // your code here:
+            // sendRequestToParent({ cat: 'getAssets' })
+        }        
+
+        const acceptPrivateApiResponse = async (data) => {
+            // process received data here:
+            // console.log(data)
+        }
+
+        // use this in order to send on document load
+        document.addEventListener('DOMContentLoaded', () => {
+            // your code here:
+            //sendRequestToParent({ method: 'getAssets' })
+        })
+
+    </script>
+    <script src="https://morethanwallet.com/appstore/index.js"></script>
+</body>
+</html>
