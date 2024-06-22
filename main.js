@@ -56,3 +56,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+const ThemeButton = document.getElementById("Theme_Change");
+let darkModeState = false;
+let themeName = "Light";
+
+function changeThemeMode() {
+    darkModeState = !darkModeState;
+    if (darkModeState==true) {
+        // Dark mode activated
+        document.body.classList.add('dark');
+        themeName = "Dark";
+    } else {
+        // Light mode activated
+        document.body.classList.remove('dark');
+        themeName = "Light";
+    }
+    // Update button text to reflect current theme
+    ThemeButton.innerText = themeName;
+}
+function getThemeButton(){
+    return darkModeState;
+}
+
+
+

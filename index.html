@@ -7,42 +7,49 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="output.css" />
 </head>
-
-<body class="dark:text-white light:text-black flex justify-center items-center h-screen">
-    <!-- your app code goes here -->
-    <div class="calculatorBody max-w-lg rounded overflow-hidden shadow-2xl bg-gray-400 bg-opacity-90 bg-gradient-to-tr from-pink-500 flex"> 
+<body class="{{ getThemeButton() ? 'dark' : '' }}">
+    <div class=" dark:bg-black dark:text-white dark:text-opacity-100 flex justify-center items-center  h-screen ">
+    <div class="flex calculatorBody max-w-lg rounded overflow-hidden shadow-2xl bg-gray-400 dark:bg-blue-400 bg-opacity-90 bg-gradient-to-tr from-pink-500 dark:from-gray-300"> 
         <!-- here we build the padding for the calculator -->
         <div class="px-16 py-25 justify-end " style="padding-top: 75px;">
             <div id="monitor" class="px-8 py-6 mb-8 rounded bg-white"></div>
             <!-- building the buttons -->
             <div class="mb-4 flex justify-around space-x-8">
-                <div id="AC" class="btn rounded-full border-2 border-red-500 px-4 py-2 hover:bg-white">AC</div>
-                <div id="C" class="btn rounded-full border-2 border-red-500 px-4 py-2 hover:bg-white">C</div>
-                <div id="dot" class="btn rounded-full border-2 border-gray-600 px-4 py-2 hover:bg-white">.</div>
-                <div id="divide" class="btn rounded-full border-2 border-green-600 px-4 py-2 hover:bg-white">/</div>
+                <div id="AC" class="btn rounded-full border-2 border-red-500 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">AC</div>
+                <div id="C" class="btn rounded-full border-2 border-red-500 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">C</div>
+                <div id="dot" class="btn rounded-full border-2 border-gray-600 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">.</div>
+                <div id="divide" class="btn rounded-full border-2 border-green-600 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">/</div>
             </div>
             <div class="mb-4 flex justify-around space-x-10">
-                <div id="seven" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">7</div>
-                <div id="eight" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">8</div>
-                <div id="nine" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">9</div>
-                <div id="multiply" class="btn rounded-full border-2 border-green-600 px-4 py-2 hover:bg-white">*</div>
+                <div id="seven" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">7</div>
+                <div id="eight" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">8</div>
+                <div id="nine" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">9</div>
+                <div id="multiply" class="btn rounded-full border-2 border-green-600 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">*</div>
             </div>
             <div class="mb-4 flex justify-around space-x-10">
-                <div id="four" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">4</div>
-                <div id="five" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">5</div>
-                <div id="six" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">6</div>
-                <div id="subtract" class="btn rounded-full border-2 border-green-600 px-4 py-2 hover:bg-white">-</div>
+                <div id="four" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">4</div>
+                <div id="five" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">5</div>
+                <div id="six" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">6</div>
+                <div id="subtract" class="btn rounded-full border-2 border-green-600 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">-</div>
             </div>
             <div class="mb-4 flex justify-around space-x-10">
-                <div id="one" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">1</div>
-                <div id="two" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">2</div>
-                <div id="three" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white">3</div>
-                <div id="add" class="btn rounded-full border-2 border-green-600 px-4 py-2 hover:bg-white">+</div>
+                <div id="one" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">1</div>
+                <div id="two" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">2</div>
+                <div id="three" class="btn rounded-full border-2 border-yellow-300 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">3</div>
+                <div id="add" class="btn rounded-full border-2 border-green-600 px-4 py-2 hover:bg-white dark:hover:bg-blue-600">+</div>
             </div>
             <div class="mb-4 flex justify-evenly space-x-8">
-                <div id="zero" class="btn rounded-full border-2 border-yellow-300 px-6 py-2 hover:bg-white">0</div>
-                <div id="equals" class="btn rounded-full border-2 border-blue-600 px-12 py-2 hover:bg-white">=</div>
+                <div id="zero" class="btn rounded-full border-2 border-yellow-300 px-6 py-2 hover:bg-white dark:hover:bg-blue-600">0</div>
+                <div id="equals" class="btn rounded-full border-2 border-blue-600 px-12 py-2 hover:bg-white dark:hover:bg-blue-600">=</div>
             </div>
+    </div>
+    </div>
+    </div>
+    <!--Theme Change Button-->
+    <div class="flex justify-end absolute top-4 right-4">
+        <button id="Theme_Change" class="px-4 py-2 rounded bg-black text-white hover:bg-blue-500 dark:bg-white dark:text-black font-semibold" onclick="changeThemeMode()">
+            Light
+        </button>        
     </div>
     <script src="main.js"></script>
     <!-- special scripts for integration in App Gallery - must be placed at the bottom of the HTML after your code -->
